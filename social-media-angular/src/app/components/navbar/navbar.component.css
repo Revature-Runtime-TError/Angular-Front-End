@@ -1,0 +1,30 @@
+
+#searchform {
+    margin: 0 650px 0 0;
+    position: left;
+    right: -100%;
+    align-items: left;
+    flex-direction: row;
+   
+    display: flex;
+    /* justify-content: space-between; */
+    width: 20%;
+    
+ }
+ #searchbutton {
+     size: 4ch;
+ 
+ 
+ }
+ #searchgreeting {
+    margin: 0 30px 0 0;
+    align-items: center;
+    position: center;
+    right: 0%;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    font-size: 24px;
+    
+ 
+ }

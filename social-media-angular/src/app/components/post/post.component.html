@@ -1,0 +1,40 @@
+<div class="post-card">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <div *ngIf="post">
+            <mat-card-title>{{post.author.firstName}}{{post.author.lastName}}</mat-card-title>
+            <mat-card-subtitle>{{post.author.email}}</mat-card-subtitle>
+        </div>
+        </mat-card-header>
+        <div *ngIf="post">
+        <img mat-card-image *ngIf="post.imageUrl" src="{{ post.imageUrl }}" alt="Post Image">
+        </div>
+        <mat-card-content>
+            <div *ngIf="post">
+            <p >
+                {{post.text}}
+            </p>
+            <div *ngFor="let comment of post.comments" class="comment-container">
+                <mat-divider></mat-divider>
+                <app-comment [comment]="comment"></app-comment>
+            </div>
+        </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <div class="myDiv">
+            <button mat-raised-button color="primary" (click)="toggleReplyToPost()">Reply</button>
+            </div>    
+        </mat-card-actions>
+        <form class="form" *ngIf="replyToPost" [formGroup]="commentForm" (ngSubmit)="submitReply($event)">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Make a Post</mat-label>
+                <textarea matInput autofocus formControlName="text"></textarea>
+            </mat-form-field>
+            <div align="end">
+                <button mat-raised-button color="warn" (click)="toggleReplyToPost()">Cancel</button>
+                <button id="myButton" mat-raised-button color="primary" type="submit">Post</button>
+            </div>
+        </form>
+    </mat-card>
+</div>
