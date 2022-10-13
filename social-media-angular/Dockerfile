@@ -1,7 +1,7 @@
 FROM node:latest as node
 WORKDIR /app
 COPY . .
-RUN npm cache clear
+RUN npm cache clear --force
 RUN npm install
 RUN npm run build --prod
 
