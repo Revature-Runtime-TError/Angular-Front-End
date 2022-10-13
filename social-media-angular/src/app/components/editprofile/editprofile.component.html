@@ -1,0 +1,120 @@
+<section style="background-color: #eee;">
+
+
+    <head>
+      <title style="text-align:center">Update Profile</title>
+      <style> 
+      
+      
+          input[type=text] {
+            width: 50%;
+            padding: 12px 30px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border-radius: 28px;
+            border: 2px solid #f26925;
+            outline: none;
+            text-align: center;
+            position: relative
+            
+            
+          }
+          
+          input[type=text]:focus {
+            background-color: rgb(206, 208, 163);
+          }
+  
+          .main-block{
+              padding: 70px 30px;
+              vertical-align: middle;
+              text-align: center;
+  
+          }
+  
+          .center {
+              margin: 0;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+          }
+          .button {
+              background-color: #008CBA;
+              color:white;
+              border-radius: 28px;
+              cursor: pointer;
+              font-size: 16;
+              padding: 15px 25px;
+  
+  
+          }
+          .back{
+              margin: 0;
+              position: absolute;
+              top: 60%;
+              left: 50%;
+              -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+          }
+          .rq{
+            color:red;
+            font-size: 6pt;
+          }
+          </style>
+  
+  
+    </head>
+    <body>
+      
+      <div class="main-block">
+  
+        <form novalidate (ngSubmit)="updateUser() " name="myform">
+          <div class="title">
+            <i class="fas fa-pencil-alt"></i> 
+            <h1 style="text-align:center">Update Profile</h1>
+          </div>
+          <div class="fname">
+            
+              
+                <input class="form-control" type="text" name="firstname"  
+                placeholder="First name" 
+                [(ngModel)] ="updatedUser.firstName" 
+                ng-required="true"
+                required>
+
+               <div class="rq" *ngIf="!updatedUser.firstName">*Required</div>
+
+            
+            
+
+          </div>
+          <div class="lname">
+            
+            <input class="form-control" type="text" name="name" placeholder="Last name" [(ngModel)] ="updatedUser.lastName"
+            required="true">
+                
+            <div class="rq" *ngIf="!updatedUser.lastName">*Required</div>
+            </div>
+          <div>
+          <div class="email">
+            
+            <input class="form-control" type="text" name="email" placeholder="Email" [(ngModel)] ="updatedUser.email"
+              required="true">
+                
+            <div class="rq" *ngIf="!updatedUser.email">*Required</div>
+
+            
+             
+          </div>
+  
+          </div>
+          <div class="center">
+              <button mat-raised-button  [disabled]="!updatedUser.lastName || !updatedUser.firstName || !updatedUser.email">Submit</button>
+          </div>
+        </form>
+  
+      </div>
+     
+    </body>
+  </section>
