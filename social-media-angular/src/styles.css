@@ -98,7 +98,9 @@ body.darkmode .mat-toolbar{
   background-color: rgb(255, 117, 24);
 }
 
-
+body.darkmode input {
+  background-color:#1e1e25;
+}
 
 
 
