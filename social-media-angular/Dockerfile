@@ -1,3 +1,4 @@
+# Takes care of step 2 of CI/CD which is installing npm and building the project
 FROM node:latest as node
 WORKDIR /app
 COPY . .
