@@ -32,4 +32,8 @@ constructor(private authService: AuthService,private router: Router) { }
   home() {
     this.router.navigate(['post-feed']);
   }
+  DarkToggle() {
+    var element = document.body.classList.toggle("darkmode");
+    element;
+  }
 }

@@ -102,6 +102,24 @@ body.darkmode input {
   background-color:#1e1e25;
 }
 
+/* body.darkmode .app-editprofile {
+  background-color:#1e1e25;
+} */
+
+body.darkmode body {
+  background-color:#1e1e25;
+}
+body.darkmode th {
+  background-color:#1e1e25;
+  border-style: groove;
+  border-color: white;
+  color: white;
+}
+
+
+body.darkmode .mat-stroked-button {
+  background-color:#1e1e25;
+}
 
 
 
