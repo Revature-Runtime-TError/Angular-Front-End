@@ -34,6 +34,7 @@ import { ResetComponent } from './components/reset/reset.component';
     ProfileComponent,
     EditprofileComponent,
     ViewprofileComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,9 @@ const routes: Routes = [
   { path: "post-feed", component: PostFeedPageComponent},
   { path: "profile" , component: ProfileComponent},
   {path: "profile/edit", component: EditprofileComponent},
+  {path: "profile/viewprofile", component: ViewprofileComponent},
+  {path: "reset", component: ResetComponent},
+
 
 ];
 
