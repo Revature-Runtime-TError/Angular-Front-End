@@ -11,7 +11,7 @@ export class ProfileService {
     
 
    }
-
+  
 
    updateUser(updateUser: User){
     

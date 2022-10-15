@@ -38,4 +38,8 @@ export class NavbarComponent implements OnInit{
   profile() {
     this.router.navigate(['profile']);
   }
+
+  searchProfile() {
+    this.router.navigate(['viewprofile']);
+  }
 }

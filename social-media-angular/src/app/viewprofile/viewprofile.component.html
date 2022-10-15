@@ -1,0 +1,28 @@
+<div class="main">
+    <mat-toolbar class="nav-bar" style = 'background-color: rgb(243,106,38);'>
+    
+        <span [routerLink]="['/post-feed']">Revature Social Media</span>
+        <span class="spacer"></span>
+        <button mat-button (click)="home();">Home</button>
+        <button mat-button (click)="logout();">Logout</button>
+        <mat-icon id = "darkbutton" (click) = "DarkToggle()">brightness_6</mat-icon>
+        
+    </mat-toolbar>
+        
+    <h1>USER PROFILE</h1>
+    <div class="profile">
+        <div class="image">
+            <img src="favicon.png" alt=" profile picture" style="border-radius:50%">
+        </div>  
+
+        <div class="greeting">
+            <h2 class="my-3"> </h2> 
+            <button mat-raised-button class="btn btn-primary">Follow</button>
+            <button mat-raised-button  class="btn btn-outline-primary ms-1">Message</button>
+        </div>
+       
+    
+    </div>
+</div>
+      
+   

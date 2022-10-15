@@ -1,0 +1,29 @@
+
+    .main{
+        text-align: center;
+        margin:auto;
+    }
+    .nav-bar{
+        display: flex;
+        box-sizing: border-box;
+        padding: 12px 16px;
+        width: 100%;
+      
+        flex-direction: row;
+        align-items: center;
+        white-space: nowrap
+    }
+
+    .image{
+        border-radius: 50% ;
+        margin: auto;
+    }
+    
+    .profile-table{
+        text-align: center;
+        margin:auto;
+        width: 800px;
+        border-collapse: collapse;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
