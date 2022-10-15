@@ -35,6 +35,9 @@ export class ViewprofileComponent implements OnInit {
     element;
   }
 
+
+  
+
   
 
 

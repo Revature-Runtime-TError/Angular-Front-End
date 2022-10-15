@@ -40,6 +40,6 @@ export class NavbarComponent implements OnInit{
   }
 
   searchProfile() {
-    this.router.navigate(['viewprofile']);
+    this.router.navigate(['profile/viewprofile']);
   }
 }
