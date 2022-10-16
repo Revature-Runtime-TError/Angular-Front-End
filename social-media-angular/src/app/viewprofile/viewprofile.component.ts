@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import User from 'src/app/models/User';
+import { Observable } from 'rxjs';
+import { ProfileService } from 'src/app/services/profile.service';
+import UserInput from 'src/app/models/UserInput';
+
 
 @Component({
   selector: 'viewprofile',
@@ -10,18 +14,19 @@ import User from 'src/app/models/User';
 })
 export class ViewprofileComponent implements OnInit {
 
-  constructor(private authService: AuthService,private router: Router) { }
+  UserInputObject: UserInput = {
+    firstname: "",
+    lastname: ""
+  }
+
+
+
+  constructor(private authService: AuthService,private router: Router, private validated: ProfileService ) { }
 
   ngOnInit(): void {
   }
 
-  viewProfile = [{
-    id : 1,
-    email: "testuser@gmail.com",
-    firstName: "Test",
-    lastName: "User"
-
-  }]
+ 
   logout() {
     this.authService.logout();
     this.router.navigate(['login']);
@@ -34,11 +39,11 @@ export class ViewprofileComponent implements OnInit {
     var element = document.body.classList.toggle("darkmode");
     element;
   }
+   validate() {
+     this.validated.findUser(this.UserInputObject).subscribe((response)=>{
+      console.log(response);
 
-
-  
-
-  
-
-
+      
+});
+   }
 }
