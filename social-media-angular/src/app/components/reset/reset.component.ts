@@ -21,6 +21,7 @@ export class ResetComponent implements OnInit {
     email: "",
     firstName: "",
     lastName: "",
+    bio: ""
   }
 
   resetPassword():void{

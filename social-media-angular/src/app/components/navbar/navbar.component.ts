@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { ProfileService } from 'src/app/services/profile.service';
 import User from 'src/app/models/User';
 import UserInput from 'src/app/models/UserInput';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -28,6 +29,7 @@ export class NavbarComponent implements OnInit{
     email: "",
     firstName: "",
     lastName: "",
+    bio: ""
   }
   UserInputObject: UserInput = {
     firstname: "",
@@ -63,6 +65,7 @@ export class NavbarComponent implements OnInit{
      this.UserService.viewprofile(this.UserInputObject).subscribe((response)=>{
       console.log(response);
       this.router.navigate(['profile/viewprofile']);
+     
        this.searchedUser = response;
        console.log(this.searchedUser);
 

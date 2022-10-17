@@ -96,6 +96,13 @@
                 
             <div class="rq" *ngIf="!updatedUser.lastName">*Required</div>
             </div>
+            <div class="bio">
+            
+              <input class="form-control" type="text" name="name" placeholder="bio" [(ngModel)] ="updatedUser.bio"
+              required="true">
+                  
+              <div class="rq" *ngIf="!updatedUser.bio">*Required</div>
+              </div>
           <div>
           <div class="email">
             

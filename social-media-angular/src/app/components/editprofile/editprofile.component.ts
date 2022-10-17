@@ -17,6 +17,7 @@ export class EditprofileComponent implements OnInit {
     email: "",
     firstName: "",
     lastName: "",
+    bio: ""
   }
  
 

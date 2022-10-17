@@ -18,7 +18,7 @@
         border-radius: 50% ;
         margin: auto;
     }
-    
+
     .profile-table{
         text-align: center;
         margin:auto;
@@ -26,4 +26,14 @@
         border-collapse: collapse;
         overflow: hidden;
         box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    th,
+td {
+    padding: 15px;
+    background-color: white;
+    color: black;
+    }
+
+th {
+text-align: left;
     }
