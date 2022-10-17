@@ -25,4 +25,17 @@ describe('ViewprofileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render welcome message', () => {
+    const fixture = TestBed.createComponent(ViewprofileComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.main')?.textContent).toContain('Revature Social Media');
+  });
+
+  it(`should have a user`, () => {
+    const fixture = TestBed.createComponent(ViewprofileComponent);
+    const component = fixture.componentInstance;
+    expect(component.user).toBeTruthy();
+  });
 });
