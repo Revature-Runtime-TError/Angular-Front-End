@@ -69,7 +69,7 @@
       
       <div class="main-block">
   
-        <form novalidate (ngSubmit)="updateUser() " name="myform">
+        <form novalidate (ngSubmit)="updateUser()" name="myform">
           <div class="title">
             <i class="fas fa-pencil-alt"></i> 
             <h1 class ="updateh1" style="text-align:center">Update Profile</h1>
@@ -96,6 +96,13 @@
                 
             <div class="rq" *ngIf="!updatedUser.lastName">*Required</div>
             </div>
+            <div class="bio">
+            
+              <input class="form-control" type="text" name="name" placeholder="bio" [(ngModel)] ="updatedUser.bio"
+              required="true">
+                  
+              <div class="rq" *ngIf="!updatedUser.bio">*Required</div>
+              </div>
           <div>
           <div class="email">
             

@@ -36,4 +36,5 @@ constructor(private authService: AuthService,private router: Router) { }
     var element = document.body.classList.toggle("darkmode");
     element;
   }
+  
 }

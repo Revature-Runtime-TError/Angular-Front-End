@@ -12,6 +12,7 @@ export class PostService {
 
   postUrl: string = "http://localhost:8090/post";
   baseUrl: string = "http://localhost:8090/auth";
+  usersPostUrl: string = "http://localhost:8090/profile/viewprofile";
 
   constructor(private http: HttpClient) { }
 
@@ -34,4 +35,13 @@ export class PostService {
     console.log(this.postUrl+"/seeFirst/"+authorId);
     return this.http.get<Post[]>(this.postUrl+"/seeFirst/"+authorId);
   }
+
+  seeUsersPosts(authorId: number): Observable<Post[]> {
+  
+    
+    return this.http.get<Post[]>(this.usersPostUrl+ "/" + authorId);
+
+  }
+
+
 }

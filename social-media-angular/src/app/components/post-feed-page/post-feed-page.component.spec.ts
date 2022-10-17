@@ -28,7 +28,7 @@ describe('PostFeedPageComponent', () => {
   it(`should have a User of 'author'`), () => {
     const fixture = TestBed.createComponent(PostFeedPageComponent);
     const component = fixture.componentInstance;
-    expect(component.author).toEqual({id: 0,email: "",firstName: "",lastName: ""});
+    expect(component.author).toEqual({id: 0,email: "",firstName: "",lastName: "", bio: ""});
   };
 
   it('should render filter question', () => {
@@ -37,4 +37,5 @@ describe('PostFeedPageComponent', () => {
       const compiled = fixture.nativeElement as HTMLElement;
       expect(compiled.querySelector('.form-label')?.textContent).toContain("Which user's posts do you want to prioritize?");
     });
+    
 });

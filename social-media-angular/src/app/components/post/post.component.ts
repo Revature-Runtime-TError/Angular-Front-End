@@ -16,6 +16,7 @@ export class PostComponent implements OnInit {
   })
 
   @Input('post') post: Post
+  
   replyToPost: boolean = false
 
   constructor(private postService: PostService, private authService: AuthService) { }

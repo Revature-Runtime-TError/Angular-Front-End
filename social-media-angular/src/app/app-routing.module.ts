@@ -5,6 +5,9 @@ import { PostFeedPageComponent } from './components/post-feed-page/post-feed-pag
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
+import { ResetComponent } from './components/reset/reset.component';
+import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+
 
 
 const routes: Routes = [
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: "post-feed", component: PostFeedPageComponent},
   { path: "profile" , component: ProfileComponent},
   {path: "profile/edit", component: EditprofileComponent},
+  {path: "profile/viewprofile", component: ViewprofileComponent},
+  {path: "reset", component: ResetComponent},
+
 
 ];
 
