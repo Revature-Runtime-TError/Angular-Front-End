@@ -6,7 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
 import { ResetComponent } from './components/reset/reset.component';
-import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { ViewprofileComponent } from './components/viewprofile/viewprofile.component';
 
 
 

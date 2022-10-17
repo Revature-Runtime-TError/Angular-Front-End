@@ -9,7 +9,7 @@
         
     </mat-toolbar>
         
-    <h1>{{user.firstName}} {{user.lastName}}</h1>
+    <h1 *ngIf="user">{{user.firstName}} {{user.lastName}}</h1>
     <div class="profile">
         <div class="image">
             <img src="favicon.png" alt=" profile picture" style="border-radius:50%">
@@ -18,11 +18,11 @@
         
 
         <div class="greeting">
-            <h2 class="my-3">{{user.bio}}</h2> 
+            <h2 *ngIf="user" class="my-3">{{user.bio}}</h2> 
             
             
         </div>
-        <table class="profile-table">
+        <table *ngIf="user" class="profile-table">
             <tr>
                 <th> First Name </th>
                 <th> {{user.firstName}}</th>

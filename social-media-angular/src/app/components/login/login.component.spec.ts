@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { LoginComponent } from './login.component';
 
@@ -34,4 +35,11 @@ describe('LoginComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.btn-block')?.textContent).toContain('Log in');
   });
+
+  it(`should have a replyToComment 'false'`, () => {
+    const fixture = TestBed.createComponent(LoginComponent);
+    const component = fixture.componentInstance;
+    expect(component.loginForm).toBeTruthy();
+  });
+
 });

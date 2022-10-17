@@ -17,7 +17,7 @@ import { UserInitialsPipe } from './pipes/user-initials.pipe';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditprofileComponent } from './components/editprofile/editprofile.component';
-import { ViewprofileComponent } from './viewprofile/viewprofile.component';
+import { ViewprofileComponent } from './components/viewprofile/viewprofile.component';
 import { ResetComponent } from './components/reset/reset.component';
 
 @NgModule({

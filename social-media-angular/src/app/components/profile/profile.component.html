@@ -47,7 +47,7 @@ text-align: left;
 <div class="main">
     <mat-toolbar class="nav-bar" style = 'background-color: rgb(243,106,38);'>
     
-        <span [routerLink]="['/post-feed']">Revature Social Media</span>
+        <span class="mySpan" [routerLink]="['/post-feed']">Revature Social Media</span>
         <span class="spacer"></span>
         <button mat-button (click)="home();">Home</button>
         <button mat-button (click)="logout();">Logout</button>
@@ -65,7 +65,7 @@ text-align: left;
             <h2 class="my-3">Hello {{user.firstName}}</h2> 
            
         </div>
-        <table class="profile-table">
+        <table *ngIf="user" class="profile-table">
             <tr>
                 <th> First Name</th>
                 <th> {{user.firstName}}</th>

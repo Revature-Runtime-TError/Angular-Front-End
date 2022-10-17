@@ -22,12 +22,18 @@ describe('CommentComponent', () => {
     const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
-
-  it('should render Make a Post prompt', () => {
+    
+  it('should render Make a comment', () => {
     const fixture = TestBed.createComponent(CommentComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     console.log(compiled.querySelector('myLabel'));
     expect(compiled.querySelector('.comment-reply-text')?.textContent).toContain('reply');
+  });
+
+  it(`should have a replyToComment 'false'`, () => {
+    const fixture = TestBed.createComponent(CommentComponent);
+    const component = fixture.componentInstance;
+    expect(component.replyToComment).toEqual(false);
   });
 });

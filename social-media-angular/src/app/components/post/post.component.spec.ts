@@ -30,4 +30,10 @@ describe('PostComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.myDiv button')?.textContent).toContain('Reply');
   });
+
+  it(`should have a replyToPost 'false'`, () => {
+    const fixture = TestBed.createComponent(PostComponent);
+    const component = fixture.componentInstance;
+    expect(component.replyToPost).toEqual(false);
+  });
 });
