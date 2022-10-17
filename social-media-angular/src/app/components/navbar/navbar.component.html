@@ -3,16 +3,33 @@
         
          <span [routerLink]="['/post-feed']">Revature Social Media</span>
          <span class="spacer"></span>
+         
          <h1 id = "searchgreeting" name = "searchgreeting">Find other users</h1>
-         <form id ="searchform">
-             <input type = "Search" id = "searchbar" name = "bar"
-             placeholder = "Enter User">
-             <button id = "searchbutton">Search</button>
-         </form>
+         <form #myForm ="ngForm" (ngSubmit) = "searchProfile()" >
+             <input type = "text" 
+             class= "form-control" 
+             id = "firstname" 
+             name = "firstname"
+             placeholder = "Enter User firstname"  
+             [(ngModel)]="UserInputObject.firstname"
+              #firstname="ngModel">
+             <input type = "text" 
+             class="form-control" 
+             id = "lastname" 
+             name = "lastname"
+             placeholder = "Enter User lastname"  
+             [(ngModel)]="UserInputObject.lastname" 
+             #lastname="ngModel">
+            
+             <button  type="submit ">Search</button>
+            </form>  
+                
          <button mat-button (click)="profile();">Profile</button>
-
+        
          <button mat-button (click)="logout();">Logout</button>
-       
+        
          <mat-icon id = "darkbutton" (click) = "DarkToggle()">brightness_6</mat-icon>
      </mat-toolbar>
- </p>
+
+</p>
+   

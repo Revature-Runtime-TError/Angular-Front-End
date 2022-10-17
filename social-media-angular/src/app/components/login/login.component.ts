@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value.email || "", this.loginForm.value.password || "")
       .subscribe(
         (response) => {
+          
           this.authService.currentUser = response
           this.router.navigate(['post-feed'])
         }
@@ -34,10 +35,6 @@ export class LoginComponent implements OnInit {
 
   register(): void {
     this.router.navigate(['register']);
-  }
-
-  login() {
-    this.router.navigate(['login']);
   }
   
   retrieveIsUserLoggedIn(): boolean{
@@ -52,5 +49,4 @@ export class LoginComponent implements OnInit {
     var element = document.body.classList.toggle("darkmode");
     element;
   }
-
 }

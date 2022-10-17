@@ -19,6 +19,7 @@ export class ResetComponent implements OnInit {
     password: "",
     firstName: "",
     lastName: "",
+    bio: ""
   }
 
   resetForm = new FormGroup({

@@ -18,6 +18,7 @@ export class EditprofileComponent implements OnInit {
     password: "",
     firstName: "",
     lastName: "",
+    bio: ""
   }
  
 

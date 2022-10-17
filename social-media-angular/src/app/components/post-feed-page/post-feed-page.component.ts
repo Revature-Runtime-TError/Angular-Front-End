@@ -26,7 +26,8 @@ export class PostFeedPageComponent implements OnInit {
       email: "",
       password: "",
       firstName: "",
-      lastName: ""
+      lastName: "",
+      bio: ""
   }
   
   constructor(private postService: PostService, private authService: AuthService) { }

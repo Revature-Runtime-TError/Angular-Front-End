@@ -23,7 +23,8 @@ export class AuthService {
     email: "",
     password: "",
     firstName: "",
-    lastName: ""
+    lastName: "",
+    bio: ""
   }
   constructor(private http: HttpClient) { }
 

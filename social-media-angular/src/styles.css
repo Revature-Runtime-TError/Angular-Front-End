@@ -112,7 +112,7 @@ body.darkmode body {
 body.darkmode th {
   background-color:#1e1e25;
   border-style: groove;
-  border-color: white;
+  border: 2px solid #f26925;
   color: white;
 }
 
@@ -120,9 +120,26 @@ body.darkmode th {
 body.darkmode .mat-stroked-button {
   background-color:#1e1e25;
 }
+body.darkmode .updateh1 {
+  color: white;
+}
 
+body.darkmode .mat-raised.button{
+  background-color:#1e1e25;
+  color: white;
+}
+th {
+  
+  border-style: groove;
+  border: 2px solid #f26925;
+}
 
-
+body.darkmode ::placeholder {
+  color: coral;
+  
+  
+  
+}
 
 .app-header {
   justify-content: space-between;
