@@ -21,7 +21,6 @@
             <h2 class="my-3">{{user.bio}}</h2> 
             
             
-            
         </div>
         <table class="profile-table">
             <tr>
@@ -37,16 +36,12 @@
                 <th> {{user.email}}</th>
             </tr>
         </table>
-        
-        <button mat-raised-button id ="loadposts" (click) = "loadPosts()" >Load User's Posts</button>
+        <button id ="loadposts" (click) = "loadPosts()"> Load User's Posts </button>
        
         
     </div>
-    <div id="post-feed" *ngFor="let post of JSONposts">
-        <tr>
-            <th> {{JSONposts.author}}</th>
-            <th> {{JSONposts.comments.text}} </th>
-            <th> {{JSONposts.comments.imageurl}}</th>
+    <div id="post-feed" *ngFor="let post of foundposts">
+        <app-post [post]="post"></app-post>
     </div>
     
 
