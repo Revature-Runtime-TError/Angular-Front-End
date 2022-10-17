@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit{
     email: "",
     firstName: "",
     lastName: "",
+    password: "",
     bio: ""
   }
   UserInputObject: UserInput = {
@@ -64,16 +65,20 @@ export class NavbarComponent implements OnInit{
     
     
      this.UserService.viewprofile(this.UserInputObject).subscribe((response)=>{
-      
-      this.router.navigate(['profile/viewprofile']);
+      if(response == null) {
+        
+        return
+      }
+      else {
      
        this.searchedUser = response;
        
 
       this.JSONuser = JSON.stringify(this.searchedUser);
       sessionStorage.setItem("searchedUser", this.JSONuser);
-     
-
+    
+      this.router.navigate(['profile/viewprofile']);
+      }
 
 
       

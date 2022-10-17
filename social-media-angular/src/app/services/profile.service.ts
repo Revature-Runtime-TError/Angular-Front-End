@@ -9,10 +9,10 @@ import UserInput from '../models/UserInput';
 export class ProfileService {
 
   private baseUrl: string = "http://localhost:8090/profile";
-  constructor(private http:HttpClient) {
-    
+  constructor(private http: HttpClient) {
+  }
 
-   }
+   
   
    currentUser: User;
    
@@ -26,13 +26,10 @@ export class ProfileService {
   viewprofile(UserInputObject: UserInput): Observable<User>{  
     
     return this.http.post<User>(this.baseUrl + "/viewprofile", UserInputObject);
-    
  }
 
-
-
-
 }
+
 
 
 

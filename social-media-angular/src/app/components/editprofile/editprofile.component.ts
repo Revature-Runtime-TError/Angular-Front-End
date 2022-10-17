@@ -15,6 +15,7 @@ export class EditprofileComponent implements OnInit {
   updatedUser: User={
     id: 0,
     email: "",
+    password: "",
     firstName: "",
     lastName: "",
     bio: ""
@@ -25,12 +26,13 @@ export class EditprofileComponent implements OnInit {
   
     ngOnInit(): void {
       this.updatedUser = this.authService.currentUser
+      //console.log(this.updatedUser)
     }
 
 
     updateUser():void{
       this.edited.updateUser(this.updatedUser).subscribe((response)=>{
-        console.log(response)
+        //console.log(response)
         this.router.navigate(["profile"])
 
       });

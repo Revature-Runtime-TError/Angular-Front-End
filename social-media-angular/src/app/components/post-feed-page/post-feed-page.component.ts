@@ -24,6 +24,7 @@ export class PostFeedPageComponent implements OnInit {
   author: User= {
       id: 0,
       email: "",
+      password: "",
       firstName: "",
       lastName: "",
       bio: ""
@@ -62,5 +63,6 @@ export class PostFeedPageComponent implements OnInit {
         this.posts=response;
       })
    })
+   
 }
 }

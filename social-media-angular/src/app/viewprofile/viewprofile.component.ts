@@ -40,7 +40,7 @@ export class ViewprofileComponent implements OnInit {
   JSONuser: any;
   JSONposts: any;
 
-  replyToPost: boolean = false
+  
 
 
 
@@ -75,6 +75,9 @@ export class ViewprofileComponent implements OnInit {
       this.JSONposts = sessionStorage.getItem("foundposts")!;
       this.foundposts=JSON.parse(this.JSONposts);
       //console.log(this.JSONposts);
+      return this.foundposts;
+
+     
 
   })
 }
