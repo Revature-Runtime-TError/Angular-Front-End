@@ -1,0 +1,13 @@
+.login-wrapper {
+    height:25em;
+}
+
+.image{
+    height:45em; background-size:cover; width:auto;
+    background-image:url('https://app.revature.com/assets/images/ajax-loader-logo.0cd555cc.gif'), 
+    url('https://media1.giphy.com/media/lnIfDxGkt2t6L3KmgG/200w.gif?cid=82a1493bb3l0iysgtnxzdlq16z06snv50mmqyfow6g0rowhk&rid=200w.gif&ct=s');
+    background-position:5% 50%;
+    background-position-y: 20%, 60%;
+    background-repeat: no-repeat;
+    background-size: 300px 200px;
+}

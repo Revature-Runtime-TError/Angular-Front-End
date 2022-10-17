@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterComponent implements OnInit {
 
+  
+
   registerForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -31,6 +33,23 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['login'])
         }
       )
+  }
+
+  login() {
+    this.router.navigate(['login']);
+  }
+  
+  retrieveIsUserLoggedIn(): boolean{
+    return this.authService.isLoggedIn;
+  }
+
+  retrieveIsUserLoggedOut(): boolean{
+    return this.authService.isLoggedOut;
+  }
+
+  DarkToggle() {
+    var element = document.body.classList.toggle("darkmode");
+    element;
   }
 
 }

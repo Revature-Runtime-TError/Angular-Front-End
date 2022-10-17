@@ -1,25 +1,31 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <mat-card class="box">
-      <mat-card-header>
-        <mat-card-title>Reset Password</mat-card-title>
-      </mat-card-header>
-      <form novalidate class="form" (ngSubmit)="resetPassword()">
-        <mat-card-content>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Email" formControlName="email">
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="New Password" type="password" formControlName="password">
-          </mat-form-field>
-          <mat-form-field class="full-width">
-            <input matInput placeholder="Confirm Password" type="password" formControlName="Confirm">
-          </mat-form-field>
-        </mat-card-content>
-
-        <button id="button1" mat-stroked-button color="accent" class="btn-block" type="submit">Confirm</button>
-        <button id="button2" mat-stroked-button color="accent" class="btn-block" type="submit" (click)="logout();">Cancel</button>
-      </form>
-    </mat-card>
-  </div>
-
-  
+<div class="image">
+  <p *ngIf="retrieveIsUserLoggedOut()">
+    <mat-toolbar style = 'background-color: rgb(243,106,38)'>
+         <span [routerLink]="['/post-feed']">Welcome to Revature Social!</span>
+         <span class="spacer"></span>
+         <mat-icon id = "darkbutton" (click) = "DarkToggle()">brightness_6</mat-icon>
+     </mat-toolbar>
+  </p>
+  <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+      <mat-card class="box">
+        <mat-card-header>
+          <mat-card-title>Reset Password</mat-card-title>
+        </mat-card-header>
+        <form class="form" [formGroup]="resetForm" (ngSubmit)="onSubmit($event)">
+          <mat-card-content>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Email" formControlName="email">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="New Password" type="New Password" formControlName="password">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Confirm Password" formControlName="password">
+            </mat-form-field>
+          </mat-card-content>
+          <button id="button1" mat-stroked-button color="accent" class="btn-block" type="submit">Confirm</button>
+          <button id="button2" mat-stroked-button color="accent" class="btn-block" type="submit" (click)="cancel();">Cancel</button>
+        </form>
+      </mat-card>
+    </div>
+</div>

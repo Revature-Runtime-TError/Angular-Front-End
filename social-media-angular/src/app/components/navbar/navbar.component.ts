@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit{
     email: "",
     firstName: "",
     lastName: "",
+    password: "",
     bio: ""
   }
   UserInputObject: UserInput = {
