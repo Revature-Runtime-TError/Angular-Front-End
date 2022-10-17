@@ -24,7 +24,7 @@ export class ViewprofileComponent implements OnInit {
 
   foundposts: Post[] = [];
   
-  @Input('post') post: Post
+ 
  
 
   user: User = {} as User;
@@ -69,12 +69,7 @@ export class ViewprofileComponent implements OnInit {
        this.foundposts= response;
        console.log(this.foundposts);
 
-      this.JSONposts = JSON.stringify(this.foundposts);
-      sessionStorage.setItem("foundposts", this.JSONuser);
-     
-      this.JSONposts = sessionStorage.getItem("foundposts")!;
-      this.foundposts=JSON.parse(this.JSONposts);
-      //console.log(this.JSONposts);
+      
       return this.foundposts;
 
      

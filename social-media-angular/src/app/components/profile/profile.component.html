@@ -62,9 +62,8 @@ text-align: left;
         </div>  
 
         <div class="greeting">
-            <h2 *ngIf="user" class="my-3">Hello {{user.firstName}}</h2> 
-            <button mat-raised-button class="btn btn-primary">Follow</button>
-            <button mat-raised-button  class="btn btn-outline-primary ms-1">Message</button>
+            <h2 class="my-3">Hello {{user.firstName}}</h2> 
+           
         </div>
         <table *ngIf="user" class="profile-table">
             <tr>
@@ -86,6 +85,10 @@ text-align: left;
         </table>
         
         <button mat-raised-button (click)="edit()" >Profile Edit</button>
+        <button id ="loadposts" (click) = "loadPosts()"> Load User's Posts </button>
+    </div>
+    <div id="post-feed" *ngFor="let post of foundposts">
+        <app-post [post]="post"></app-post>
     </div>
 </div>
       
