@@ -20,8 +20,8 @@
         <div class="greeting">
             <h2 class="my-3">{{user.bio}}</h2> 
             
-            <button mat-raised-button class="btn btn-primary">Follow</button>
-            <button mat-raised-button  class="btn btn-outline-primary ms-1">Message</button>
+            
+            
         </div>
         <table class="profile-table">
             <tr>
@@ -37,12 +37,16 @@
                 <th> {{user.email}}</th>
             </tr>
         </table>
-        <button id ="loadposts" (click) = "loadPosts()"> Load User's Posts </button>
+        
+        <button mat-raised-button id ="loadposts" (click) = "loadPosts()" >Load User's Posts</button>
        
         
     </div>
-    <div id="post-feed" *ngFor="let post of foundposts">
-        <app-post [post]="post"></app-post>
+    <div id="post-feed" *ngFor="let post of JSONposts">
+        <tr>
+            <th> {{JSONposts.author}}</th>
+            <th> {{JSONposts.comments.text}} </th>
+            <th> {{JSONposts.comments.imageurl}}</th>
     </div>
     
 

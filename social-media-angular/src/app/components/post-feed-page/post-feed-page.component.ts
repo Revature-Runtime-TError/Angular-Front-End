@@ -62,5 +62,6 @@ export class PostFeedPageComponent implements OnInit {
         this.posts=response;
       })
    })
+   
 }
 }
