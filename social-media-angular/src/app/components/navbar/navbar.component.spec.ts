@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar.component';
 import { HttpClient} from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatDatepickerToggle } from '@angular/material/datepicker';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,31 +14,26 @@ import { MatDatepickerToggle } from '@angular/material/datepicker';
 
 
 describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
-  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ NavbarComponent ], 
-      imports: [HttpClientTestingModule, HttpClientModule, RouterTestingModule], 
+      imports: [HttpClientTestingModule, HttpClientModule, RouterTestingModule, FormsModule], 
       providers: [HttpClient]
-      
-     
-      
     })
     .compileComponents();
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
-    fixture.autoDetectChanges();
+
   });
 
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(NavbarComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
   //testing if the mattoolbar is orange
   it('navbar should be colored orange' , () => {
-    
+    const fixture = TestBed.createComponent(NavbarComponent);
+    const component = fixture.componentInstance;
     component.DarkToggle(); 
     
     const colorEl: HTMLElement = fixture.debugElement.query(By.css('mat-toolbar')).nativeElement;
@@ -49,7 +45,8 @@ describe('NavbarComponent', () => {
     });
 
   it('button should call DarkToggle function between light and dark', () => {
-    
+    const fixture = TestBed.createComponent(NavbarComponent);
+    const component = fixture.componentInstance;
     component.DarkToggle();
     expect(document.body.classList.contains('darkmode')).toBeTruthy();
     component.DarkToggle();

@@ -44,7 +44,7 @@ export class ViewprofileComponent implements OnInit {
 
 
 
-  constructor(private authService: AuthService,private router: Router, private ProfileService: ProfileService, private PostService: PostService) { }
+  constructor(private authService: AuthService,private router: Router, private PostService: PostService) { }
 
   ngOnInit(): void  {
     this.JSONuser = sessionStorage.getItem("searchedUser")!;

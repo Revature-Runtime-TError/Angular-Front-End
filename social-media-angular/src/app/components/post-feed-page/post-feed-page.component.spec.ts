@@ -25,11 +25,18 @@ describe('PostFeedPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have a User of 'author'`), () => {
+  it(`should have a User of 'author'`, () => {
     const fixture = TestBed.createComponent(PostFeedPageComponent);
     const component = fixture.componentInstance;
-    expect(component.author).toEqual({id: 0,email: "",firstName: "",lastName: "", bio: ""});
-  };
+    expect(component.author).toEqual({
+      id: 0,
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      bio: ""
+    });
+  });
 
   it('should render filter question', () => {
       const fixture = TestBed.createComponent(PostFeedPageComponent);
