@@ -13,10 +13,15 @@ export class AuthService {
   authUrl: string = `${environment.baseUrl}/auth`;
   
   currentUser: User
+
+  isLoggedIn: boolean = false;
+
+  isLoggedOut: boolean = true;
   
   searchedUser: User = {
     id: 0,
     email: "",
+    password: "",
     firstName: "",
     lastName: ""
   }

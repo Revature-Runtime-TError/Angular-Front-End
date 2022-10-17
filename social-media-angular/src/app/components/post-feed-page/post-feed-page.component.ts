@@ -24,6 +24,7 @@ export class PostFeedPageComponent implements OnInit {
   author: User= {
       id: 0,
       email: "",
+      password: "",
       firstName: "",
       lastName: ""
   }

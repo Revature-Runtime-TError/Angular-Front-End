@@ -7,15 +7,11 @@ import User from '../models/User';
 export class ProfileService {
 
   private baseUrl: string = "http://localhost:8090/profile";
-  constructor(private http:HttpClient) {
-    
+  constructor(private http: HttpClient) {
+  }
 
-   }
-
-
-   updateUser(updateUser: User){
-    
-    return this.http.put<User> (this.baseUrl +"/edit", updateUser) ;
-   }
+  updateUser(updateUser: User) {
+    return this.http.put<User>(this.baseUrl + "/edit", updateUser);
+  }
 }
 

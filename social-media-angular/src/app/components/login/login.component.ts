@@ -36,4 +36,21 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['register']);
   }
 
+  login() {
+    this.router.navigate(['login']);
+  }
+  
+  retrieveIsUserLoggedIn(): boolean{
+    return this.authService.isLoggedIn;
+  }
+
+  retrieveIsUserLoggedOut(): boolean{
+    return this.authService.isLoggedOut;
+  }
+
+  DarkToggle() {
+    var element = document.body.classList.toggle("darkmode");
+    element;
+  }
+
 }
