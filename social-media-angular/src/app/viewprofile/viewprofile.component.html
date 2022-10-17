@@ -13,6 +13,7 @@
     <div class="profile">
         <div class="image">
             <img src="favicon.png" alt=" profile picture" style="border-radius:50%">
+           
         </div>  
         
 
@@ -36,9 +37,14 @@
                 <th> {{user.email}}</th>
             </tr>
         </table>
+        <button id ="loadposts" (click) = "loadPosts()"> Load User's Posts </button>
        
-    
+        
     </div>
-</div>
+    <div id="post-feed" *ngFor="let post of foundposts">
+        <app-post [post]="post"></app-post>
+    </div>
+    
+
       
    

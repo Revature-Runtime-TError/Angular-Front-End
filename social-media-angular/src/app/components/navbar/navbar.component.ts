@@ -9,7 +9,8 @@ import { ProfileService } from 'src/app/services/profile.service';
 import User from 'src/app/models/User';
 import UserInput from 'src/app/models/UserInput';
 import { NgIf } from '@angular/common';
-
+import { PostService } from 'src/app/services/post.service';
+import Post from 'src/app/models/Post';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -20,9 +21,9 @@ export class NavbarComponent implements OnInit{
  
   
 
-  constructor(private authService: AuthService, private router: Router, private UserService: ProfileService) { }
+  constructor(private authService: AuthService, private router: Router, private UserService: ProfileService, private PostService: PostService) { }
   
-  
+  posts: Post[] = [];
   
   searchedUser: User = {
     id: 0,
@@ -63,14 +64,20 @@ export class NavbarComponent implements OnInit{
     
     
      this.UserService.viewprofile(this.UserInputObject).subscribe((response)=>{
-      console.log(response);
+      
       this.router.navigate(['profile/viewprofile']);
      
        this.searchedUser = response;
-       console.log(this.searchedUser);
+       
 
       this.JSONuser = JSON.stringify(this.searchedUser);
       sessionStorage.setItem("searchedUser", this.JSONuser);
+     
+
+
+
+      
+      
 
     
     
