@@ -9,17 +9,32 @@
         
     </mat-toolbar>
         
-    <h1>USER PROFILE</h1>
+    <h1>{{user.firstName}} {{user.lastName}}</h1>
     <div class="profile">
         <div class="image">
             <img src="favicon.png" alt=" profile picture" style="border-radius:50%">
         </div>  
+        
 
         <div class="greeting">
-            <h2 class="my-3"> </h2> 
+            <h2 class="my-3"> {{user.firstName}} </h2> 
             <button mat-raised-button class="btn btn-primary">Follow</button>
             <button mat-raised-button  class="btn btn-outline-primary ms-1">Message</button>
         </div>
+        <table class="profile-table">
+            <tr>
+                <th> First Name </th>
+                <th> {{user.firstName}}</th>
+            </tr>
+            <tr>
+                <th> Last Name</th>
+                <th> {{user.lastName}}</th>
+            </tr>
+            <tr>
+                <th> Email</th>
+                <th> {{user.email}}</th>
+            </tr>
+        </table>
        
     
     </div>

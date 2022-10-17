@@ -14,17 +14,25 @@ import UserInput from 'src/app/models/UserInput';
 })
 export class ViewprofileComponent implements OnInit {
 
+  
+  user: User = {} as User;
+
   UserInputObject: UserInput = {
     firstname: "",
     lastname: ""
   }
+  JSONuser: any;
 
 
 
-  constructor(private authService: AuthService,private router: Router, private validated: ProfileService ) { }
+  constructor(private authService: AuthService,private router: Router, private ProfileService: ProfileService) { }
 
   ngOnInit(): void {
-  }
+    this.JSONuser = sessionStorage.getItem("searchedUser")!;
+      this.user = JSON.parse(this.JSONuser);
+   
+}
+
 
  
   logout() {
@@ -39,11 +47,8 @@ export class ViewprofileComponent implements OnInit {
     var element = document.body.classList.toggle("darkmode");
     element;
   }
-   validate() {
-     this.validated.findUser(this.UserInputObject).subscribe((response)=>{
-      console.log(response);
-
-      
-});
-   }
+  
 }
+
+   
+

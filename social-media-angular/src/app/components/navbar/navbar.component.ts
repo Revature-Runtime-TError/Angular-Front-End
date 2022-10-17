@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit{
   
   
   
-  User: User = {
+  searchedUser: User = {
     id: 0,
     email: "",
     firstName: "",
@@ -33,6 +33,7 @@ export class NavbarComponent implements OnInit{
     firstname: "",
     lastname: ""
   }
+  JSONuser: any; 
 
   ngOnInit(): void {
   }
@@ -57,10 +58,19 @@ export class NavbarComponent implements OnInit{
   }
 
   searchProfile()  {
-    console.log(this.UserInputObject)
-    this.UserService.findUser(this.UserInputObject).subscribe((response)=>{
+    
+    
+     this.UserService.viewprofile(this.UserInputObject).subscribe((response)=>{
       console.log(response);
-    this.router.navigate(['profile/viewprofile']);
+      this.router.navigate(['profile/viewprofile']);
+       this.searchedUser = response;
+       console.log(this.searchedUser);
+
+      this.JSONuser = JSON.stringify(this.searchedUser);
+      sessionStorage.setItem("searchedUser", this.JSONuser);
+
+    
+    
   })
 }
 }

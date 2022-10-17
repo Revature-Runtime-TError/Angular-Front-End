@@ -14,6 +14,7 @@ export class ProfileService {
 
    }
   
+   currentUser: User;
    
   
   
@@ -22,11 +23,9 @@ export class ProfileService {
     return this.http.put<User> (this.baseUrl +"/edit", updateUser) ;
    }
 
-  
-
-   findUser(UserInputObject: UserInput): Observable<User>{  
-       
-    return this.http.post<User>(this.baseUrl + "/viewaccount", UserInputObject);
+  viewprofile(UserInputObject: UserInput): Observable<User>{  
+    
+    return this.http.post<User>(this.baseUrl + "/viewprofile", UserInputObject);
     
  }
 
