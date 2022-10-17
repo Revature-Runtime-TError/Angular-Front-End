@@ -28,9 +28,9 @@ export class NavbarComponent implements OnInit{
   searchedUser: User = {
     id: 0,
     email: "",
+    password: "",
     firstName: "",
     lastName: "",
-    password: "",
     bio: ""
   }
   UserInputObject: UserInput = {
@@ -79,13 +79,6 @@ export class NavbarComponent implements OnInit{
     
       this.router.navigate(['profile/viewprofile']);
       }
-
-
-      
-      
-
-    
-    
   })
 }
 }
