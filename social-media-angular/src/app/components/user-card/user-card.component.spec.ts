@@ -30,9 +30,9 @@ describe('UserCardComponent', () => {
     expect(compiled.querySelector('.user-card label')?.textContent).toContain('Revature Network');
   });
 
-  // it(`should have a replyToComment 'false'`, () => {
-  //   const fixture = TestBed.createComponent(UserCardComponent);
-  //   const component = fixture.componentInstance;
-  //   expect(component.user).toEqual({});
-  // });
+  it(`should have a replyToComment 'false'`, () => {
+    const fixture = TestBed.createComponent(UserCardComponent);
+    const component = fixture.componentInstance;
+    expect(component.user).toBeTruthy();
+  });
 });

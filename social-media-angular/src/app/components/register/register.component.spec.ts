@@ -34,4 +34,10 @@ describe('RegisterComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.login-wrapper mat-card-title')?.textContent).toContain('Register');
   });
+
+  it(`should have a Register Form`, () => {
+    const fixture = TestBed.createComponent(RegisterComponent);
+    const component = fixture.componentInstance;
+    expect(component.registerForm).toBeTruthy();
+  });
 });

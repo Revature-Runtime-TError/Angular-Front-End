@@ -36,13 +36,10 @@ describe('LoginComponent', () => {
     expect(compiled.querySelector('.btn-block')?.textContent).toContain('Log in');
   });
 
-  // it(`should have a replyToComment 'false'`, () => {
-  //   const fixture = TestBed.createComponent(LoginComponent);
-  //   const component = fixture.componentInstance;
-  //   expect(component.loginForm).toEqual({
-  //     email: ???,
-  //     password: ???
-  //   });
-  // });
+  it(`should have a replyToComment 'false'`, () => {
+    const fixture = TestBed.createComponent(LoginComponent);
+    const component = fixture.componentInstance;
+    expect(component.loginForm).toBeTruthy();
+  });
 
 });

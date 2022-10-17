@@ -30,4 +30,10 @@ describe('ProfileComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.main h1')?.textContent).toContain("USER PROFILE");
   });
+
+  it(`should have a user`, () => {
+    const fixture = TestBed.createComponent(ProfileComponent);
+    const component = fixture.componentInstance;
+    expect(component.user).toBeTruthy();
+  });
 });
