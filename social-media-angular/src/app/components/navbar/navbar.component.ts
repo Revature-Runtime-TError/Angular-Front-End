@@ -62,8 +62,7 @@ export class NavbarComponent implements OnInit{
   }
 
   searchProfile()  {
-    
-    
+  
      this.UserService.viewprofile(this.UserInputObject).subscribe((response)=>{
       if(response == null) {
         

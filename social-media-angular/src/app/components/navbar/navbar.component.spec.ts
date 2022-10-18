@@ -36,11 +36,12 @@ describe('NavbarComponent', () => {
     const component = fixture.componentInstance;
     component.DarkToggle(); 
     
+    
     const colorEl: HTMLElement = fixture.debugElement.query(By.css('mat-toolbar')).nativeElement;
     console.log(colorEl);
     console.log(colorEl.style.backgroundColor);
     expect(colorEl.style.backgroundColor).toBe('rgb(243, 106, 38)');
-
+    document.body.classList.remove('darkmode');
   
     });
 
