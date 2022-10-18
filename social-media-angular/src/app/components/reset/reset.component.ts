@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ResetService } from 'src/app/services/reset.service';
-import { NgModel } from '@angular/forms';
 
 
 @Component({
