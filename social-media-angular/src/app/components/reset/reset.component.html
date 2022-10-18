@@ -17,11 +17,13 @@
               <input matInput placeholder="Email" formControlName="email">
             </mat-form-field>
             <mat-form-field class="full-width">
-              <input matInput placeholder="New Password" type="New Password" formControlName="password">
+              <input id="pass" matInput placeholder="New Password" type="New Password" formControlName="password">
             </mat-form-field>
             <mat-form-field class="full-width">
-              <input matInput placeholder="Confirm Password" formControlName="password">
+              <input matInput placeholder="Confirm Password" formControlName="confirmPassword">
             </mat-form-field>
+            <div  style="color:red" *ngIf="resetForm.value.confirmPassword != resetForm.value.password && resetForm.value.confirmPassword != null && resetForm.value.password != null">New Password & Confirm Password do not match!</div>
+            <div style="color:red">{{message}}</div>
           </mat-card-content>
           <button id="button1" mat-stroked-button color="accent" class="btn-block" type="submit">Confirm</button>
           <button id="button2" mat-stroked-button color="accent" class="btn-block" type="submit" (click)="cancel();">Cancel</button>

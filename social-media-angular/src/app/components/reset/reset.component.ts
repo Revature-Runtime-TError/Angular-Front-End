@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ResetService } from 'src/app/services/reset.service';
+import { NgModel } from '@angular/forms';
 
 
 @Component({
@@ -22,29 +23,52 @@ export class ResetComponent implements OnInit {
     bio: ""
   }
 
+  updateUser: User = {
+    id: 0,
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    bio: ""
+  }
+
+
   resetForm = new FormGroup({
     email: new FormControl(this.user.email),
-    password: new FormControl(this.user.password)
+    password: new FormControl(this.user.password),
+    confirmPassword: new FormControl()
+
   })
 
   constructor(private router: Router, private resetService: ResetService, private authService: AuthService) { }
+  message: string = "";
 
   ngOnInit(): void {
+
   }
+  content : string = "Hello World";
 
   // Reset password functionality
   onSubmit(e: any): void {
     e.preventDefault()
 
-    //Searches for user by email so their existing password is identifies
-    this.resetService.findByEmail(this.resetForm.value.email!).subscribe((response) => {
-      this.user = response;
-      console.log(this.user)
 
-      this.resetService.resetPassword(this.user).subscribe((response) => {
-        this.router.navigate(["login"])
-      });
-    })
+    if (this.resetForm.value.password == this.resetForm.value.confirmPassword) {
+      //Searches for user by email so their existing password is identifies
+      this.resetService.findByEmail(this.resetForm.value.email!).subscribe((response) => {
+        this.updateUser = response;
+        if (response != null) {
+          //Overwriting password in textbox
+          this.updateUser.password = this.resetForm.value.password!
+          //Resets password for user found after search
+          this.resetService.resetPassword(this.updateUser).subscribe((res) => {
+            this.router.navigate(["login"])
+          });
+        }else{
+          this.message = "User does not exist!";
+        }
+      })
+    }
 
   }
 
@@ -56,11 +80,11 @@ export class ResetComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  retrieveIsUserLoggedIn(): boolean{
+  retrieveIsUserLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
 
-  retrieveIsUserLoggedOut(): boolean{
+  retrieveIsUserLoggedOut(): boolean {
     return this.authService.isLoggedOut;
   }
 
