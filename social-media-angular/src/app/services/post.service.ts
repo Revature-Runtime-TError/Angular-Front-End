@@ -10,9 +10,7 @@ import User from '../models/User';
 })
 export class PostService {
 
-  postUrl: string = "http://localhost:8090/post";
-  baseUrl: string = "http://localhost:8090/auth";
-  usersPostUrl: string = "http://localhost:8090/profile/viewprofile";
+  postUrl: string = `${environment.baseUrl}/post`;
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +37,7 @@ export class PostService {
   seeUsersPosts(authorId: number): Observable<Post[]> {
   
     
-    return this.http.get<Post[]>(this.usersPostUrl+ "/" + authorId);
+    return this.http.get<Post[]>(this.postUrl+ "/" + authorId);
 
   }
 

@@ -57,6 +57,10 @@ export class PostFeedPageComponent implements OnInit {
 
   seeFirst(){
       this.postService.findAuthorByName(this.author.firstName, this.author.lastName).subscribe((respo)=>{
+         if(respo==null)
+         {
+          return;
+         }
          this.author=respo;
           this.postService.seeFirst(this.author.id).subscribe((response)=>{  
           console.log(response);
