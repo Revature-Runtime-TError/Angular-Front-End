@@ -11,6 +11,7 @@ import User from '../models/User';
 export class PostService {
 
   postUrl: string = `${environment.baseUrl}/post`;
+  userUrl: string = `${environment.baseUrl}/profile`;
 
   constructor(private http: HttpClient) { }
 
@@ -37,7 +38,7 @@ export class PostService {
   seeUsersPosts(authorId: number): Observable<Post[]> {
   
     
-    return this.http.get<Post[]>(this.postUrl+ "/" + authorId);
+    return this.http.get<Post[]>(this.userUrl+ "/viewprofile/" + authorId);
 
   }
 
