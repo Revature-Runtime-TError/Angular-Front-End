@@ -2,7 +2,7 @@
   <app-navbar *ngIf="retrieveIsUserLoggedIn()"></app-navbar> 
   <p *ngIf="retrieveIsUserLoggedOut()">
     <mat-toolbar style = 'background-color: rgb(243,106,38)'>
-         <span [routerLink]="['/post-feed']">Welcome to Revature Social!</span>
+         <span>Welcome to Revature Social!</span>
          <span class="spacer"></span>
          <mat-icon id = "darkbutton" (click) = "DarkToggle()">brightness_6</mat-icon>
      </mat-toolbar>
