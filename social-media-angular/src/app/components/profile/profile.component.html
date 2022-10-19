@@ -80,9 +80,10 @@ text-align: left;
                 <th> {{user.bio}}</th>
             </tr>
         </table>
-        
+        <div style="text-align:center;">
         <button mat-raised-button (click)="edit()" >Profile Edit</button>
         <button mat-raised-button (click) = "loadPosts()"> Load User's Posts </button>
+        </div>
     </div>
     <div id="post-feed" *ngFor="let post of foundposts">
         <app-post [post]="post"></app-post>
